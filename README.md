@@ -71,7 +71,7 @@ After that, you can render the source view and render the decomposed target view
 
 ### Comparison with DINO
 
-Finally, we can also compare the PCA reduced futures and feature distance maps of NeRF-N3F + DINO vs. vanilla DINO:
+Finally, we can also compare the PCA reduced features and feature distance maps of NeRF-N3F + DINO vs. vanilla DINO:
 
 <p float="left">
   <img src="https://www.robots.ox.ac.uk/~vadim/n3f/resources/code_release/dino.jpg" width="400" />
