@@ -40,7 +40,7 @@ ls data/dino/pca64/
 # results in e.g. `fern.pt`
 ```
 
-If you want to extract features for custom images, then simply structure your data in the same format as for the NeRF setting, and adjust `--dir_images` so that it points to your images.
+If you want to extract features for custom images, then simply structure your data in the same format as for the NeRF setting (as described [here](https://github.com/dichotomies/N3F#training-with-custom-data)), and adjust `--dir_images` to the directory of your images.
 
 ## Getting started
 
@@ -72,6 +72,10 @@ The dataset and pretrained models can be found on [google drive](https://drive.g
 Download both files `logs.tar.gz` and `data.tar.gz` and extract them into the main directory. The checkpoints are located in the logs directory. The data directory contains the flower scene and the features extracted with DINO for this scene and the remaining scenes shown in the paper. This allows you to train your own models if you have downloaded the [NeRF checkpoints](https://drive.google.com/drive/folders/1jIr8dkvefrQmv737fFm2isiT6tqpbTbv) and [datasets for the remaining scenes](https://drive.google.com/drive/folders/128yBriW1IG_3NJ5Rp7APSTZsJqdJdfc1).
 
 If you want to try out N3F with additional scenes from the NeRF setting, then download them from [google drive](https://drive.google.com/drive/folders/14boI-o5hGO9srnWaaogTU5_ji7wkX2S7) and place them into `data/nerf_llff_data`. After that, proceed with the extraction of the features as described in the update from 20.10.22 (see above).
+
+### Training with custom data
+
+In order to use this code with custom scenes, follow the [instructions from the official NeRF repository](https://github.com/bmild/nerf/tree/18b8aebda6700ed659cb27a0c348b737a5f6ab60#generating-poses-for-your-own-scenes) (this code uses the same data format as in their repository). After that, extract the features for your images with the provided [DINO feature extractor](https://github.com/dichotomies/N3F/tree/master/feature_extractor) and you are ready to train your model.
 
 ## Reproducing results
 
