@@ -15,6 +15,22 @@ def load_settings():
             "view_a": 0,
             "view_b": -1,
         },
+        "horns": {
+            "rc": [100, 200],
+            "sz": 50,
+            "thr": 1.05,
+            "margin": 0.15,
+            "view_a": 0,
+            "view_b": 16
+        },
+        "fern": {
+            "rc": [125, 200],
+            "sz": 50,
+            "thr": 1.2,
+            "margin": 0.15,
+            "view_a": 0,
+            "view_b": 16
+        }
     }
 
 

@@ -7,4 +7,4 @@
 *.dae
 data/*
 logs/*
-logs_bck/*
+feature_extractor/ckpts

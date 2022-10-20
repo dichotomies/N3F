@@ -18,9 +18,29 @@
 
 This repository contains the official implementation of the paper *Neural Feature Fusion Fields: 3D Distillation of Self-Supervised 2D Image Representations* by [Vadim Tschernezki](https://github.com/dichotomies), [Iro Laina](https://campar.in.tum.de/Main/IroLaina), [Diane Larlus](https://dlarlus.github.io/) and [Andrea Vedaldi](https://www.robots.ox.ac.uk/~vedaldi/). Published at 3DV22 as Oral.
 
-We provide the code for the experiments of NeRF-N3F setting. **NOTE:** The repository contains currently the settings for the flower dataset (see flower video above). We will add the rendering settings for the other scenes in the next days.
+We provide the code for the experiments of the NeRF-N3F setting (three scenes: flower, horns, fern).
 
 We present Neural Feature Fusion Fields (N3F), a method that improves dense 2D image feature extractors when the latter are applied to the analysis of multiple images reconstructible as a 3D scene. Given an image feature extractor, for example pre-trained using self-supervision, N3F uses it as a teacher to learn a student network defined in 3D space. The 3D student network is similar to a neural radiance field that distills said features and can be trained with the usual differentiable rendering machinery. As a consequence, N3F is readily applicable to most neural rendering formulations, including vanilla NeRF and its extensions to complex dynamic scenes. We show that our method not only enables semantic understanding in the context of scene-specific neural fields without the use of manual labels, but also consistently improves over the self-supervised 2D baselines. This is demonstrated by considering various tasks, such as 2D object retrieval, 3D segmentation, and scene editing, in diverse sequences, including long egocentric videos in the EPIC-KITCHENS benchmark.
+
+## Updates
+
+### 20.10.22: Extracting DINO features from custom images/additional scenes
+
+We provide a script for extracting DINO features from custom images and additional scenes for the NeRF setting. You can find the code in `feature_extractor`. To use the extractor, run following commands from the main directory:
+
+```
+# download the DINO model
+sh feature_extractor/download_dino.sh
+
+# extract features for other scenes; we use images down-scaled by a factor of 8
+python -m feature_extractor.extract --dir_images data/nerf_llff_data/fern/images_8
+
+# this will extract the features for the corresponding scene into `/data/dino/pca64`
+ls data/dino/pca64/
+# results in e.g. `fern.pt`
+```
+
+If you want to extract features for custom images, then simply structure your data in the same format as for the NeRF setting, and adjust `--dir_images` so that it points to your images.
 
 ## Getting started
 
@@ -50,6 +70,8 @@ If you are getting the following error: `CUDA error: no kernel image is availabl
 The dataset and pretrained models can be found on [google drive](https://drive.google.com/drive/folders/1sZ26AHd7N3xXWiP3ZTZ6uxd1T6kQDxu1?usp=sharing).
 
 Download both files `logs.tar.gz` and `data.tar.gz` and extract them into the main directory. The checkpoints are located in the logs directory. The data directory contains the flower scene and the features extracted with DINO for this scene and the remaining scenes shown in the paper. This allows you to train your own models if you have downloaded the [NeRF checkpoints](https://drive.google.com/drive/folders/1jIr8dkvefrQmv737fFm2isiT6tqpbTbv) and [datasets for the remaining scenes](https://drive.google.com/drive/folders/128yBriW1IG_3NJ5Rp7APSTZsJqdJdfc1).
+
+If you want to try out N3F with additional scenes from the NeRF setting, then download them from [google drive](https://drive.google.com/drive/folders/14boI-o5hGO9srnWaaogTU5_ji7wkX2S7) and place them into `data/nerf_llff_data`. After that, proceed with the extraction of the features as described in the update from 20.10.22 (see above).
 
 ## Reproducing results
 
