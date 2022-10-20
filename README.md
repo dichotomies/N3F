@@ -49,8 +49,6 @@ conda install -c anaconda ipykernel
 python -m ipykernel install --user --name=n3f
 ```
 
-If you are getting the following error: `CUDA error: no kernel image is available for execution on the device`, then try installing pytorch with a different CUDA kernel, e.g.: `pip install torch==1.10.2+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html`.
-
 ### Dataset and Pretrained Models
 
 The dataset and pretrained models can be found on [google drive](https://drive.google.com/drive/folders/1sZ26AHd7N3xXWiP3ZTZ6uxd1T6kQDxu1?usp=sharing).
