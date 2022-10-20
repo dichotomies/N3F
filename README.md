@@ -81,7 +81,7 @@ If you want to extract features for custom scenes, then simply structure your da
 
 ## Reproducing results
 
-We are providing a notebook that contains the code to reproduce the results for the flower scene. The other scenes will be added in the next days.
+We are providing a notebook that contains the code to reproduce the results for the three scenes shown in our paper: flower, horns and fern.
 
 ### Decomposed rendering
 
