@@ -63,7 +63,7 @@ If you want to try out N3F with additional scenes from the NeRF setting, then do
 
 In order to use this code with custom scenes, follow the [instructions from the official NeRF repository](https://github.com/bmild/nerf/tree/18b8aebda6700ed659cb27a0c348b737a5f6ab60#generating-poses-for-your-own-scenes) (this code uses the same data format as in their repository). After that, extract the features for your images with the provided DINO feature extractor (see below).
 
-### DINO Feature extractor (for additional NeRF scenes and custom scenes)
+### DINO feature extractor (for additional NeRF scenes and custom scenes)
 
 You can extract DINO features for additional NeRF scenes by running following commands from the main directory:
 
