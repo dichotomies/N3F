@@ -26,7 +26,7 @@ We provide the code for the experiments of the NeRF-N3F setting (three scenes: f
 
 ### 20.10.22: Extracting DINO features from custom images/additional scenes
 
-We provide a script for extracting DINO features from custom images and additional scenes for the NeRF setting. You can find the code in `feature_extractor`.
+We provide a script for extracting DINO features from custom images and additional scenes for the NeRF setting. See [here](https://github.com/dichotomies/N3F#dino-feature-extractor-for-additional-nerf-scenes-and-custom-scenes) for more details.
 
 ## Getting started
 
